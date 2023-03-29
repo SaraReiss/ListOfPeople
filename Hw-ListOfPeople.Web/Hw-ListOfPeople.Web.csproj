@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Hw_ListOfPeople.Web</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hw-ListOfPeople.Data\Hw-ListOfPeople.Data.csproj" />
+  </ItemGroup>
+
+</Project>
