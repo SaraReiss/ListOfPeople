@@ -27,22 +27,24 @@ namespace Hw_ListOfPeople.Web.Controllers
         public IActionResult Add(List<Person> people)
         {
             var manager = new PersonManager(_connectionString);
-            foreach(var person in people)
-            {
-                //(another way - disable the button untill form is valid in js...)
-                if(person.FirstName == null || person.LastName == null || person.Age == null)
-                {
-                    return Redirect("/home/showadd");
-                }
-                else
-                {
-                    manager.AddMany(people);
-                }
-            }
-           
+            //foreach (var person in people)
+            //{
+            //    (another way - disable the button untill form is valid in js...)
+            //    if (person.FirstName == null || person.LastName == null || person.Age == null)
+            //    {
+            //        return Redirect("/home/showadd");
+            //    }
+            //    else
+            //    {
+            //        manager.Add(person);
+            //    }
 
-           
-                if(people.Count >=2)
+            //}
+            manager.AddMany(people);
+
+
+
+            if (people.Count >=2)
             {
                 TempData["message"] = $"{people.Count} people have been successfully added!";
                 
